@@ -1,19 +1,49 @@
-# Sample Hardhat Project
+# ✴️Airdrop token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Deploy smart contract token and aidrop, send tokens to many different addresses
 
-Try running some of the following tasks:
+## 🔧Installation
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-### Deploy smart contract token
-npx hardhat run --network manta scripts/deploy-token.ts
-### Deploy smart contract airdrop
-npx hardhat run --network manta scripts/deploy-airdrop.ts
+Install project Aidrop with yarn
+
+```bash
+  cd Aidrop
+  yarn install
 ```
 
-# Airdrop-Token
-"# Airdrop-token" 
+## ✔️Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`PRIVATE_KEY`
+
+`ADDRESS_1`
+
+`ADDRESS_2`
+
+Private key of address account owner will deploy smart contract
+Address 1 and 2 will test in script
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npx hardhat test
+```
+
+## 🌏Deployment
+
+Deployment smart contract in manta network testnet
+
+#### To deploy smart contract token
+
+```bash
+  npx hardhat run --network manta scripts/deploy-token.ts
+```
+
+#### To deploy smart contract airdrop
+
+```bash
+  npx hardhat run --network manta scripts/deploy-airdrop.ts
+```

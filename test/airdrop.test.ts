@@ -3,6 +3,9 @@ import { ethers } from "hardhat";
 import { Airdrop, Token } from "../typechain-types";
 import { Signer } from "ethers";
 
+const ADDRESS_1 = process.env.ADDRESS_1 || "";
+const ADDRESS_2 = process.env.ADDRESS_2 || "";
+
 describe("Airdrop contract", function () {
   let airdrop: Airdrop;
   let owner: Signer;
@@ -13,8 +16,8 @@ describe("Airdrop contract", function () {
   before(async function () {
     const HuskyToken = await ethers.getContractFactory("Token");
     [owner] = await ethers.getSigners();
-    recipient1 = "0x4B45E8B958aaeB509E1264c6e4Ac45F9C7f991A2";
-    recipient2 = "0x7e8E1A59445bA9BC4103563858dD276bD0369944";
+    recipient1 = ADDRESS_1;
+    recipient2 = ADDRESS_2;
 
     huskyToken = await HuskyToken.deploy(owner.getAddress());
 
@@ -82,7 +85,7 @@ describe("Airdrop contract", function () {
       recipientAddresses[1]
     );
 
-    expect(balanceRecipient1.toString()).to.equal("27");
-    expect(balanceRecipient2.toString()).to.equal("54");
+    expect(balanceRecipient1.toString()).to.equal("1");
+    expect(balanceRecipient2.toString()).to.equal("2");
   });
 });

@@ -4,6 +4,7 @@ require("dotenv").config();
 import "@nomicfoundation/hardhat-toolbox";
 
 const privateKey = process.env.PRIVATE_KEY || "";
+
 const config: HardhatUserConfig = {
   paths: {
     artifacts: "./artifacts",
